@@ -26,7 +26,7 @@ import java.awt.*;
 /**Simple plotting methods for the MLPClassifier examples
  * @author Alex Black
  */
-public class PlotUtils {
+public class PlotUtil {
 
     /**Plot the training data. Assume 2d input, classification output
      * @param features Training data features

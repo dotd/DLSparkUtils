@@ -113,7 +113,7 @@ object MLPClassifierLinear {
     val nTrainPoints = 1000;
     trainIter = new RecordReaderDataSetIterator(rr, nTrainPoints, 0, 2);
     var ds = trainIter.next();
-    //PlotUtil.plotTrainingData(ds.getFeatures(), ds.getLabels(), allXYPoints, predictionsAtXYPoints, nPointsPerAxis);
+    PlotUtil.plotTrainingData(ds.getFeatures(), ds.getLabels(), allXYPoints, predictionsAtXYPoints, nPointsPerAxis);
 
     //Get test data, run the test data through the network to generate predictions, and plot those predictions:
     rrTest.initialize(new FileSplit(new File("src/main/resources/classification/linear_data_eval.csv")));
@@ -122,7 +122,7 @@ object MLPClassifierLinear {
     testIter = new RecordReaderDataSetIterator(rrTest, nTestPoints, 0, 2);
     ds = testIter.next();
     val testPredicted = model.output(ds.getFeatures());
-    //PlotUtil.plotTestData(ds.getFeatures(), ds.getLabels(), testPredicted, allXYPoints, predictionsAtXYPoints, nPointsPerAxis);
+    PlotUtil.plotTestData(ds.getFeatures(), ds.getLabels(), testPredicted, allXYPoints, predictionsAtXYPoints, nPointsPerAxis);
 
     System.out.println("****************Example finished********************");
 
